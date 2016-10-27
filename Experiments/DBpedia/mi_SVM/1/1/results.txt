@@ -1,0 +1,2 @@
+roc roc_sent roc_macro roc_sent_macro fprAUC
+0.803397 0.780622 0.826396 0.858325 0.000000
