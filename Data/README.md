@@ -1,4 +1,4 @@
-# DeliciousMIL: A Data Set for Multi-Label Multi-Instance Learning
+# DeliciousMIL: A Data Set for Multi-Label Multi-Instance Learning with Instance Labels
 
 ### Abstract:
 This dataset includes 1) 12234 documents (8251 training, 3983 test) extracted from DeliciousT140 dataset, 2) class labels for all documents, 3) labels for a subset of sentences of the test documents.
@@ -19,7 +19,7 @@ Arkaitz Zubiaga, Alberto P. Garc&iacute;a-Plaza, V&iacute;ctor Fresno, and Raque
 Departamento de Lenguajes y Sistemas Inform&aacute;ticos, Universidad Nacional de Educaci&oacute;n a Distancia, Madrid, Spain
 
 ### Relevant Information:
-This dataset provides ground-truth class labels to evaluate performance of multi-instance learning models on both instance-level and bag-level label prediction. DeliciousMIL was first used in [1] to evaluate performance of MLTM, a multi-label multi-instance learning method, in document classification and sentence labeling.
+This dataset provides ground-truth class labels to evaluate performance of multi-instance learning models on both instance-level and bag-level label predictions. DeliciousMIL was first used in [1] to evaluate performance of MLTM, a multi-label multi-instance learning method, for document classification and sentence labeling.
 
 Multi-instance learning is a special class of weakly supervised machine learning methods where the learner receives a collection of labeled bags each containing multiple instances. A bag is set to have a particular class label if and only if at least one of its instances has that class label.
 
@@ -28,7 +28,7 @@ reference, design, programming, internet, computer, web, java, writing, English,
 
 We randomly selected 12234 pages and randomly divided them into 8251 training and 3983 test documents. We also applied Porter stemming and standard stopword removal. 
 
-Each text document is a bag within a multi-instance learning framework consisting of multiple sentences (instances). The goal is to predict document-level and sentence-level class labels on the test set using a model which is trained only on the document-level class labels in the training set.
+Each text document is a bag within a multi-instance learning framework consisting of multiple sentences (instances). The goal is to predict document-level and sentence-level class labels on the test set using a model which is trained given only the document-level class labels in the training set.
 To evaluate performance of such a model, we have manually labeled 1468 randomly selected sentences from the test documents. Please see [1] for more information. 
 
 ### Attribute Information:
