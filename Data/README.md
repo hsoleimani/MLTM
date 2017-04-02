@@ -19,17 +19,17 @@ Arkaitz Zubiaga, Alberto P. Garc&iacute;a-Plaza, V&iacute;ctor Fresno, and Raque
 Departamento de Lenguajes y Sistemas Inform&aacute;ticos, Universidad Nacional de Educaci&oacute;n a Distancia, Madrid, Spain
 
 ### Relevant Information:
-This dataset provides ground-truth class labels to evaluate performance of multi-instance learning models on both instance-level and bag-level label predictions. DeliciousMIL was first used in [1] to evaluate performance of MLTM, a multi-label multi-instance learning method, for document classification and sentence labeling.
+This dataset provides ground-truth class labels to evaluate performance of multi-instance learning models on both instance-level and bag-level label predictions. DeliciousMIL was first used in [1-2] to evaluate performance of MLTM, a multi-label multi-instance learning method, for document classification and sentence labeling.
 
 Multi-instance learning is a special class of weakly supervised machine learning methods where the learner receives a collection of labeled bags each containing multiple instances. A bag is set to have a particular class label if and only if at least one of its instances has that class label.
 
-DeliciousMIL consists of a subset of tagged web pages from the social bookmarking site delicious.com. The original web pages were obtained from DeliciousT140 dataset, which was collected by [2] from the delicious.com in June 2008. Users of the website delicious.com bookmarked each page with word tags. From this dataset, we extracted text parts of each web page and chose 20 common tags as class labels. These class labels are:
+DeliciousMIL consists of a subset of tagged web pages from the social bookmarking site delicious.com. The original web pages were obtained from DeliciousT140 dataset, which was collected by [3] from the delicious.com in June 2008. Users of the website delicious.com bookmarked each page with word tags. From this dataset, we extracted text parts of each web page and chose 20 common tags as class labels. These class labels are:
 reference, design, programming, internet, computer, web, java, writing, English, grammar, style, language, books, education, philosophy, politics, religion, science, history, and culture.
 
 We randomly selected 12234 pages and randomly divided them into 8251 training and 3983 test documents. We also applied Porter stemming and standard stopword removal. 
 
 Each text document is a bag within a multi-instance learning framework consisting of multiple sentences (instances). The goal is to predict document-level and sentence-level class labels on the test set using a model which is trained given only the document-level class labels in the training set.
-To evaluate performance of such a model, we have manually labeled 1468 randomly selected sentences from the test documents. Please see [1] for more information. 
+To evaluate performance of such a model, we have manually labeled 1468 randomly selected sentences from the test documents. Please see [1-2] for more information. 
 
 ### Attribute Information:
 
