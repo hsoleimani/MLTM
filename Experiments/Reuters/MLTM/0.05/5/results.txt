@@ -1,0 +1,2 @@
+roc wrdlkh roc_macro roc_trans roc_macro_trans fprAUC traintime
+0.957739 -1033230.560852 0.932971 0.957077 0.934563 0.029755 36330.000000

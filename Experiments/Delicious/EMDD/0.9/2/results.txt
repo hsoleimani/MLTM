@@ -1,0 +1,2 @@
+roc roc_sent roc_macro roc_sent_macro fprAUC traintime
+0.704300 0.691442 0.652642 0.650132 0.175640 181.000000

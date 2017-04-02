@@ -29,6 +29,8 @@ vlblfile = '%s/valid-label.dat' %Datapath
 vocabfile = '%s/vocabs.txt' %Datapath
 trslblfile = '%s/train-sentlabel.dat' %Datapath
 tslblfile = '%s/test-sentlabel.dat' %Datapath
+ofile = '%s/obsvd-data.dat' %Datapath
+hfile = '%s/lda_hldout-data.dat' %Datapath
 
 trlbl = np.loadtxt(trlblfile)
 tlbl = np.loadtxt(tlblfile)
@@ -134,6 +136,30 @@ for doc in slbl_pred:
 		cnt += 1
 
 (roc_sent, roc_sent_macro) = myAUC.compute_auc(b, gt_sent)
+
+### compute lkh on the heldout test set
+seed = np.random.randint(seed0)
+cmdtxt = '%s %d test %s %s %s/final %s' %(Code, seed, ofile, tsettingfile, dirpath, dirpath)
+os.system(cmdtxt  + ' > /dev/null')
+
+theta = np.loadtxt('%s/testfinal.theta' %dirpath)
+theta /= np.sum(theta, 1).reshape(-1, 1)
+beta = np.loadtxt('%s/final.beta' %dirpath)
+beta /= np.sum(beta, 0)
+# hldout
+fp = open(hfile)
+wrdlkh = 0.0
+d = 0
+while True:
+	doc = fp.readline()
+	if len(doc) == 0:
+		break
+	wrds = [int(x) for x in re.findall('([0-9]*):[0-9]*', doc)]
+	cnts = [float(x) for x in re.findall('[0-9]*:([0-9]*)', doc)]
+	tmp = np.log(np.dot(beta[wrds, :], theta[d,:].reshape(-1,1)))[:,0]
+	wrdlkh += np.sum(tmp.copy()*np.array(cnts))
+	d += 1
+fp.close()
 
 
 fpres = open(resfile, 'a')

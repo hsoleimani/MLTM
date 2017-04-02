@@ -33,6 +33,8 @@ vlblfile = '%s/valid-label.dat' %Datapath
 vocabfile = '%s/vocabs.txt' %Datapath
 trslblfile = '%s/train-sentlabel.dat' %Datapath
 tslblfile = '%s/test-sentlabel.dat' %Datapath
+ofile = '%s/lda_obsvd-data.dat' %Datapath
+hfile = '%s/lda_hldout-data.dat' %Datapath
 
 
 # only keep labeled docs
@@ -297,6 +299,37 @@ for tpc_per_lbl in [1,2,3,4]:
 			roc_macroC[c] = metrics.auc(fpr_macro[:,c],tpr_macro[:,c])
 			nC += 1
 		roc_sent_macro = np.mean(roc_macroC)
+
+		# compute wrd-lkh on the heldout set
+		# run LDA
+		seed = np.random.randint(seed0)
+		cmdtxt = '%s %d inf ldasettings.txt %s/lda %s %s/test' \
+			%(lda_path, seed, dirpath, ofile, dirpath)
+		print(cmdtxt)
+		os.system(cmdtxt)
+
+		# load LDA gamma
+		theta = np.loadtxt('%s/test-gamma.dat' %dirpath)
+		theta /= np.sum(theta,1).reshape(-1,1)
+
+		# compute wrd-lkh
+		fpdocs = open(hfile)
+		d = 0
+		wrdlkh = 0.0
+		while True:
+			doc = fpdocs.readline()
+			if len(doc) == 0:
+				break
+			wrds = re.findall('([0-9]*):[0-9]*', doc)
+			cnts = re.findall('[0-9]*:([0-9]*)', doc)	
+			doclkh = 0.0
+			for n,w in enumerate(wrds):
+				doclkh += float(cnts[n])*np.log(np.dot(theta[d,:], beta[int(w),:]))
+			wrdlkh += doclkh
+			d += 1
+		fpdocs.close()
+
+
 
 		fpres = open(resfile, 'a')
 		fpres.write('%d %f %f %f %f %f %f %f %f\n' %(M, roc, roc_sent, wrdlkh, roc_macro, roc_sent_macro, lbls_not_used, fprAUC, trtime))

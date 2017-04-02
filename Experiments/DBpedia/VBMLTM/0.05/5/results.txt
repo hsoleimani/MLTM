@@ -1,0 +1,2 @@
+roc roc_sent wrdlkh roc_macro roc_sent_macro roc_trans roc_macro_trans prob_lbling_error fprAUC traintime
+0.830634 0.860817 -329258.672444 0.825874 0.857890 0.809089 0.802617 0.586649 0.000000 84907.000000

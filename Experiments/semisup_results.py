@@ -39,7 +39,7 @@ for pcnt,p in enumerate(prop):
 			if t == 0:
 				prop_res = np.zeros((T,len(temp)))
 			prop_res[t,:] = temp
-		if method in ['MISVM','mi_SVM']:
+		if method in ['MISVM','mi_SVM','miGraph', 'EnMIMLNN']:
 			for tt in range(1,T):
 				prop_res[tt,:] = prop_res[t,:]
 			break

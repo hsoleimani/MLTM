@@ -58,11 +58,13 @@ Please see https://github.com/hsoleimani/MLTM for example python code for readin
 
 ### Relevant Papers:
 
-[1] Hossein Soleimani and David J. Miller. 2016. Semi-supervised Multi-Label Topic Models for Document Classification and Sentence Labeling. In Proceedings of the 25th ACM International on Conference on Information and Knowledge Management (CIKM '16). ACM, New York, NY, USA, 105-114. DOI: http://dx.doi.org/10.1145/2983323.2983752.
+[1] Hossein Soleimani, David J. Miller, "Semisupervised, Multilabel, Multi-Instance Learning for Structured Data," Neural Computation, vol. 29, no. 4, pp. 1053-1102, 2017.
 
-[2] Arkaitz Zubiaga, Alberto P. García-Plaza, Víctor Fresno, and Raquel Martínez. 2009. Content-Based Clustering for Tag Cloud Visualization. In Proceedings of the 2009 International Conference on Advances in Social Network Analysis and Mining (ASONAM '09). IEEE Computer Society, Washington, DC, USA, 316-319. DOI=http://dx.doi.org/10.1109/ASONAM.2009.19
+[2] Hossein Soleimani and David J. Miller. 2016. Semi-supervised Multi-Label Topic Models for Document Classification and Sentence Labeling. In Proceedings of the 25th ACM International on Conference on Information and Knowledge Management (CIKM '16). ACM, New York, NY, USA, 105-114. DOI: http://dx.doi.org/10.1145/2983323.2983752.
+
+[3] Arkaitz Zubiaga, Alberto P. García-Plaza, Víctor Fresno, and Raquel Martínez. 2009. Content-Based Clustering for Tag Cloud Visualization. In Proceedings of the 2009 International Conference on Advances in Social Network Analysis and Mining (ASONAM '09). IEEE Computer Society, Washington, DC, USA, 316-319. DOI=http://dx.doi.org/10.1109/ASONAM.2009.19
 
 ### Citation Request:
 If you use DeliciousMIL, please cite:
 
-Hossein Soleimani and David J. Miller. 2016. Semi-supervised Multi-Label Topic Models for Document Classification and Sentence Labeling. In Proceedings of the 25th ACM International on Conference on Information and Knowledge Management (CIKM '16). ACM, New York, NY, USA, 105-114. DOI: http://dx.doi.org/10.1145/2983323.2983752.
+H. Soleimani, D. J. Miller, "Semisupervised, Multilabel, Multi-Instance Learning for Structured Data," Neural Computation, vol. 29, no. 4, pp. 1053-1102, 2017.
